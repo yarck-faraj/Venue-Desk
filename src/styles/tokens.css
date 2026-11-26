@@ -4,13 +4,13 @@
   --brand-accent: #d93509;
   --brand-surface: #f7f6ec;
   --brand-ink: #26261a;
-  --brand-chrome: #1b1c11;
-  --brand-on-chrome: #b9b45a;
+  --brand-chrome: #1f3a34;
+  --brand-on-chrome: #e3b34a;
   --brand-tint: #eeedd9;
 }
 [data-brand="events"] {
-  --brand-chrome: #1b1c11;
-  --brand-on-chrome: #b9b45a;
+  --brand-chrome: #1f3a34;
+  --brand-on-chrome: #e3b34a;
   --brand-tint: #eeedd9;
 }
 [data-brand="bean"] {

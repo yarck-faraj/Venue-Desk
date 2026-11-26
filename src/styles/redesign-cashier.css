@@ -1,0 +1,34 @@
+.cx { background: var(--bg); }
+.cx header { min-height: 88px; padding: var(--s3) var(--s5); background: var(--chrome); }
+.cx header nav { background: rgba(255,255,255,.1); border-radius: var(--pill); padding: 5px; }
+.cx header nav button { border-radius: var(--pill); }
+.cxleft { padding: var(--s5); }
+.cxsearch input { border-radius: var(--pill); padding-left: var(--s5); }
+.cxscanbtn { border-radius: var(--pill); background: var(--accent); color: var(--on-accent, #fff); }
+.cxchips button { min-height: 48px; }
+.cxgrid { gap: var(--s4); }
+.cxprod {
+  min-height: 148px;
+  padding: var(--s5);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-1);
+}
+.cxprod span { font-size: var(--fs-xl); }
+.cxcart {
+  width: min(440px, 44%);
+  padding: var(--s5);
+  background: var(--card);
+  box-shadow: -12px 0 32px rgba(20,38,32,.08);
+}
+.cxcart h3 { min-height: 48px; font-size: var(--fs-xl); }
+.cxline { padding: var(--s4) 0; }
+.cxtotal { padding: var(--s5); }
+.cxtotal b { font-size: 40px; }
+.cxpay button { min-height: 72px; border-radius: var(--r); }
+.cx .theme-toggle { margin-left: var(--s2); flex: none; }
+@media (max-width: 700px) {
+  .cx header { min-height: 80px; padding: var(--s2) var(--s3); }
+  .cxleft { padding: var(--s3); }
+  .cxprod { min-height: 124px; padding: var(--s4); }
+  .cxcart { width: 100%; }
+}

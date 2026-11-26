@@ -1,5 +1,6 @@
 @import "./tokens.css";
 @import "./brand-tokens.css";
+@import "./theme.css";
 @import "./base.css";
 @import "./layout.css";
 @import "./components.css";
@@ -17,3 +18,6 @@
 @import "./cashier-sheets.css";
 @import "./scanner.css";
 @import "./responsive.css";
+@import "./redesign-auth.css";
+@import "./redesign.css";
+@import "./redesign-cashier.css";

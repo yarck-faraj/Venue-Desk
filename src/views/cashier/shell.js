@@ -49,7 +49,7 @@ export function renderCashier() {
   else if (mode === "old") body = cxOld();
   else body = cxSell(open, sh);
   $("#view").innerHTML =
-    `<div class="cx" data-brand="${outletBrand(o.name || "")}"><header><div><b>${esc(o.name || "Lynn's")}</b><small>${esc(nm)}</small></div><nav>${nav}</nav><div class="cxtot">${money(tot)}<small>today</small></div><button class="cxout" data-a="signout">Sign out</button></header>${body}</div>`;
+    `<div class="cx" data-brand="${outletBrand(o.name || "")}"><header><div><b>${esc(o.name || "Lynn's")}</b><small>${esc(nm)}</small></div><nav>${nav}</nav><div class="cxtot">${money(tot)}<small>today</small></div><label class="theme-toggle"><input class="theme-input" type="checkbox" aria-label="Use dark theme"><span>Dark</span></label><button class="cxout" data-a="signout">Sign out</button></header>${body}</div>`;
   if (keep !== null) {
     const e = $("#pq");
     if (e) {

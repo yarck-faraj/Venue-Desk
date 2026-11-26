@@ -1,9 +1,0 @@
-/* Lynn's brand tokens: owner and event center use data-brand="events"; each cashier portal uses its own outlet key. */
-[data-brand="events"] { --brand-primary:#6B6720; --brand-accent:#D93509; --brand-surface:#F7F6EC; --brand-ink:#26261A; }
-[data-brand="events"][data-theme="dark"] { --brand-primary:#B9B45A; --brand-accent:#FF6A43; --brand-surface:#1B1C11; --brand-ink:#F4EFE6; }
-[data-brand="bean"] { --brand-primary:#651A0A; --brand-accent:#A2660A; --brand-surface:#FAF3EA; --brand-ink:#2B1710; }
-[data-brand="bean"][data-theme="dark"] { --brand-primary:#E0A13A; --brand-accent:#E0A13A; --brand-surface:#1E1210; --brand-ink:#F4EFE6; }
-[data-brand="bites"] { --brand-primary:#764909; --brand-accent:#B05F10; --brand-surface:#FBF3E3; --brand-ink:#2A1D0C; }
-[data-brand="bites"][data-theme="dark"] { --brand-primary:#E8A25C; --brand-accent:#E8A25C; --brand-surface:#1F170B; --brand-ink:#F4EFE6; }
-[data-brand="cocktail"] { --brand-primary:#B3246F; --brand-accent:#FF9E68; --brand-surface:#FFF4F0; --brand-ink:#2A1520; }
-[data-brand="cocktail"][data-theme="dark"] { --brand-primary:#FF7FB3; --brand-accent:#FF9E68; --brand-surface:#160B11; --brand-ink:#F4EFE6; }

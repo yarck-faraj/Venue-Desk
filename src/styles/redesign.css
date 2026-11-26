@@ -1,0 +1,74 @@
+#app {
+  background:
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--primary-tint) 55%, transparent), transparent 34%),
+    var(--bg);
+}
+header.top { min-height: 72px; padding-top: 12px; padding-bottom: 12px; }
+header.top::before {
+  content: "";
+  width: 42px;
+  height: 44px;
+  flex: none;
+  background: url("/assets/images/lynns-events-white.png") center / contain no-repeat;
+}
+header.top h1 { font-size: var(--fs-xl); font-weight: 700; }
+header.top .theme-toggle { margin-left: auto; }
+header.top .dot { margin-left: 0; }
+.bar { gap: var(--s3); }
+.bar .seg { border-radius: var(--pill); padding: 5px; background: var(--sunken); }
+.bar .seg button { border-radius: var(--pill); min-height: 42px; }
+.card, .kpi { border-radius: var(--r-lg); box-shadow: var(--sh-1); }
+.kpis { gap: var(--s4); }
+.kpi { position: relative; overflow: hidden; padding: var(--s5); min-height: 128px; }
+.kpi::after {
+  content: "";
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  right: -22px;
+  bottom: -30px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--primary-tint) 78%, transparent);
+}
+.kpi .s { text-transform: uppercase; letter-spacing: .08em; font-size: var(--fs-xs); font-weight: 800; }
+.kpi b { position: relative; z-index: 1; font-size: 28px; }
+.card h2 { font-size: var(--fs-lg); }
+.row { min-height: 56px; }
+.btn { min-height: 48px; border-radius: var(--r); transition: transform var(--t), box-shadow var(--t), background-color var(--t); }
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(1px); }
+.btn.gold { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 2px 0 color-mix(in srgb, var(--accent) 58%, #000); }
+.bars { min-height: 150px; }
+.cal { gap: var(--s2); padding: var(--s3); border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--card); box-shadow: var(--sh-1); }
+.cal .d { min-height: 88px; padding: var(--s3); border: 1px solid var(--line); border-radius: var(--r); background: var(--card); box-shadow: var(--sh-1); }
+.cal .d.today > b { display: inline-flex; width: 28px; height: 28px; align-items: center; justify-content: center; border-radius: 50%; background: var(--primary); color: #fff; }
+.cal .d.sel { background: var(--primary-tint); box-shadow: inset 0 0 0 2px var(--accent); }
+.rmgrid { gap: var(--s3); }
+.rm { min-height: 112px; justify-content: space-between; border: 1px solid var(--line); border-left: 5px solid var(--primary); border-radius: var(--r); background: var(--card); box-shadow: var(--sh-1); padding: var(--s4); }
+.rm b { font-size: var(--fs-lg); }
+.rm-occupied { background: var(--ok-bg); }
+.rm-dirty { background: var(--warn-bg); }
+.rm-maintenance { background: var(--neutral-bg); }
+.tlwrap { border-radius: var(--r-lg); box-shadow: var(--sh-1); }
+.tl .th, .tl .tr { background: var(--card); }
+.tl .tc { min-height: 52px; }
+@media (min-width: 900px) {
+  nav.tabs { width: 248px; background: #173b35; padding: var(--s6) var(--s4); }
+  nav.tabs::before { width: 148px; height: 120px; margin-bottom: var(--s8); }
+  nav.tabs button { min-height: 52px; border-radius: var(--r); font-size: var(--fs-md); }
+  nav.tabs button.on { background: rgba(227,179,74,.17); }
+  nav.tabs button.on::before { left: -16px; width: 4px; background: #e3b34a; }
+  header.top { padding-left: calc(248px + var(--s8)); }
+  main { margin-left: 248px; max-width: calc(1240px + var(--s8) * 2); padding: var(--s8) var(--s10) var(--s10); }
+}
+@media (max-width: 899px) {
+  header.top::before { display: none; }
+  header.top h1 { font-size: var(--fs-lg); }
+  main { padding-top: var(--s4); }
+  .cal { gap: 4px; padding: 4px; }
+  .cal .d { min-height: 68px; padding: var(--s2); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .card, .kpi, .cxprod, .rm { animation: surface-in 220ms ease-out both; }
+  @keyframes surface-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+}
