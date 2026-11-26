@@ -2,35 +2,85 @@
   nav.tabs {
     top: 0;
     bottom: auto;
-    width: 196px;
+    width: var(--side);
     height: 100vh;
     flex-direction: column;
+    gap: 2px;
+    background: var(--chrome);
     border-top: 0;
-    border-right: 1px solid var(--line);
-    padding-top: 64px;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: none;
+    padding: var(--s5) var(--s3) var(--s4);
     justify-content: flex-start;
+  }
+  nav.tabs::before {
+    content: "";
+    flex: none;
+    width: 120px;
+    height: 98px;
+    margin: 0 auto var(--s6);
+    background: url("/assets/images/lynns-events-white.png") center / contain no-repeat;
   }
   nav.tabs button {
+    position: relative;
     flex: none;
+    min-height: 44px;
     flex-direction: row;
     font-size: 14px;
-    gap: 12px;
-    padding: 13px 20px;
+    font-weight: 500;
+    gap: var(--s3);
+    padding: 10px var(--s3);
+    border-radius: var(--r-sm);
     justify-content: flex-start;
+    color: var(--on-dark-mute);
+  }
+  nav.tabs button svg {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border-radius: 0;
+  }
+  nav.tabs button:hover {
+    color: var(--on-dark);
+    background: rgba(255, 255, 255, 0.06);
+  }
+  nav.tabs button.on {
+    color: var(--on-dark);
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  nav.tabs button.on svg {
+    background: none;
+    color: var(--on-chrome);
+  }
+  nav.tabs button.on::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: var(--on-chrome);
+  }
+  nav.tabs :focus-visible {
+    outline-color: var(--focus-on-dark);
+    outline-offset: 0;
   }
   header.top {
-    padding-left: 212px;
+    padding-left: calc(var(--side) + var(--s6));
+    padding-right: var(--s6);
   }
   main {
-    margin: 0 0 0 196px;
-    max-width: 1180px;
-    padding: 18px 24px 40px;
+    margin: 0 0 0 var(--side);
+    max-width: calc(1180px + var(--s8) * 2);
+    padding: var(--s6) var(--s8) var(--s10);
   }
   .paybar {
     display: none;
   }
   .overlay {
-    padding-left: 196px;
+    padding-left: var(--side);
   }
   .kpis {
     grid-template-columns: repeat(3, 1fr);

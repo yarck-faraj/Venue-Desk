@@ -1,7 +1,7 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: #0008;
+  background: rgba(20, 20, 12, 0.55);
   z-index: 20;
   display: flex;
   align-items: flex-end;
@@ -13,57 +13,119 @@
   max-width: 640px;
   max-height: 92vh;
   overflow: auto;
-  border-radius: 18px 18px 0 0;
-  padding: 16px 16px calc(20px + env(safe-area-inset-bottom));
+  overscroll-behavior: contain;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  box-shadow: var(--sh-3);
+  padding: var(--s5) var(--s5) calc(var(--s5) + env(safe-area-inset-bottom));
 }
 @media (min-width: 640px) {
   .overlay {
     align-items: center;
+    padding: var(--s6);
   }
   .sheet {
-    border-radius: 18px;
+    border-radius: var(--r-lg);
+    max-height: calc(100vh - 48px);
+    padding-bottom: var(--s5);
   }
 }
 .sheet h3 {
-  margin: 0 0 12px;
-  font-size: 18px;
+  margin: 0 0 var(--s4);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--s3);
+}
+.sheet > h3:first-child {
+  position: sticky;
+  top: calc(-1 * var(--s5));
+  z-index: 2;
+  margin: calc(-1 * var(--s5)) calc(-1 * var(--s5)) var(--s4);
+  padding: var(--s5) var(--s5) var(--s3);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+#mf > div:last-child {
+  position: sticky;
+  bottom: calc(-1 * var(--s5) - env(safe-area-inset-bottom));
+  z-index: 2;
+  margin: var(--s2) calc(-1 * var(--s5)) calc(-1 * var(--s5) - env(safe-area-inset-bottom)) !important;
+  padding: var(--s3) var(--s5) calc(var(--s4) + env(safe-area-inset-bottom));
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+#mf > div:last-child .btn {
+  min-height: var(--tap);
 }
 .x {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 0;
-  background: #efe9dd;
+  background: var(--sunken);
+  color: var(--ink);
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 18px;
-  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  line-height: 1;
+}
+.x:hover {
+  box-shadow: var(--hover);
+}
+@media (pointer: coarse) {
+  .x {
+    width: 44px;
+    height: 44px;
+  }
 }
 .warn {
-  background: #fbefd5;
-  border: 1px solid #ecd49a;
-  color: #6b4800;
-  padding: 10px 12px;
-  border-radius: 10px;
-  margin-bottom: 12px;
+  position: relative;
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-line);
+  border-left-width: 4px;
+  color: #6b4500;
+  padding: var(--s3) var(--s3) var(--s3) 44px;
+  border-radius: var(--r-sm);
+  margin-bottom: var(--s4);
   font-size: 14px;
+  line-height: 1.45;
+}
+.warn::before {
+  content: "!";
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--warn);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
 }
 .empty {
   color: var(--mute);
   text-align: center;
-  padding: 18px 0;
+  padding: var(--s8) var(--s4);
 }
 .chk {
   display: flex;
-  gap: 10px;
+  gap: var(--s3);
   align-items: center;
-  padding: 7px 0;
+  min-height: 44px;
+  padding: var(--s2) 0;
   border-top: 1px solid var(--line);
 }
 .chk input {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 }
 .chk.done span {
   text-decoration: line-through;
