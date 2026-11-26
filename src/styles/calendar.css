@@ -1,0 +1,44 @@
+.cal {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.cal .h {
+  font-size: 11px;
+  text-align: center;
+  color: var(--mute);
+  padding: 2px 0;
+}
+.cal .d {
+  min-height: 62px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.cal .d.out {
+  opacity: 0.4;
+}
+.cal .d.today {
+  border-color: var(--gold);
+  box-shadow: inset 0 0 0 1px var(--gold);
+}
+.cal .d.sel {
+  background: #f3ecdc;
+}
+.cal .d i {
+  display: block;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 1.25;
+  margin-top: 2px;
+  padding: 1px 4px;
+  border-radius: 4px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

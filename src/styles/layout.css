@@ -1,0 +1,62 @@
+header.top {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--brand);
+  color: #fff;
+  padding: calc(10px + env(safe-area-inset-top)) 16px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header.top h1 {
+  font-size: 17px;
+  margin: 0;
+  flex: 1;
+  font-weight: 650;
+}
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #7bd39a;
+}
+.dot.off {
+  background: #e2a23b;
+}
+main {
+  padding: 14px 14px 96px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+nav.tabs {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 6;
+}
+nav.tabs button {
+  flex: 1;
+  border: 0;
+  background: none;
+  padding: 9px 0 8px;
+  font-size: 11px;
+  color: var(--mute);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+nav.tabs button svg {
+  width: 22px;
+  height: 22px;
+}
+nav.tabs button.on {
+  color: var(--brand);
+  font-weight: 650;
+}

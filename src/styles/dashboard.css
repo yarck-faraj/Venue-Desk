@@ -1,0 +1,77 @@
+.kpis.k8 {
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 640px) {
+  .kpis.k8 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  nav.tabs button {
+    font-size: 10px;
+  }
+  nav.tabs button svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (min-width: 900px) {
+  .kpis.k8 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+header.top .synctxt {
+  font-size: 12px;
+  opacity: 0.9;
+  margin-right: 2px;
+}
+.fatal {
+  background: #f7dcd8;
+  color: #8e2a21;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+.kgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+.kc {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--gold);
+  border-radius: 12px;
+  padding: 12px;
+}
+.kc.cook {
+  border-left-color: var(--ok);
+}
+.kc.late {
+  background: #fdecea;
+  border-left-color: var(--bad);
+}
+.kc .kh {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+  font-size: 17px;
+}
+.kc .kh span {
+  font-size: 13px;
+  color: var(--mute);
+}
+.kc .ki {
+  font-size: 17px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.kc .btn {
+  width: 100%;
+  padding: 13px;
+}
+.kc.done {
+  opacity: 0.75;
+  border-left-color: #9aa3a0;
+}

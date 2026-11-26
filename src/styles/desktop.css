@@ -1,0 +1,38 @@
+@media (min-width: 900px) {
+  nav.tabs {
+    top: 0;
+    bottom: auto;
+    width: 196px;
+    height: 100vh;
+    flex-direction: column;
+    border-top: 0;
+    border-right: 1px solid var(--line);
+    padding-top: 64px;
+    justify-content: flex-start;
+  }
+  nav.tabs button {
+    flex: none;
+    flex-direction: row;
+    font-size: 14px;
+    gap: 12px;
+    padding: 13px 20px;
+    justify-content: flex-start;
+  }
+  header.top {
+    padding-left: 212px;
+  }
+  main {
+    margin: 0 0 0 196px;
+    max-width: 1180px;
+    padding: 18px 24px 40px;
+  }
+  .paybar {
+    display: none;
+  }
+  .overlay {
+    padding-left: 196px;
+  }
+  .kpis {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

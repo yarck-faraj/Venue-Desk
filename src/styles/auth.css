@@ -1,0 +1,44 @@
+.auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: var(--brand);
+}
+.auth .box {
+  background: #fff;
+  border-radius: 18px;
+  padding: 24px;
+  width: 100%;
+  max-width: 380px;
+}
+.auth h1 {
+  margin: 0 0 4px;
+}
+.auth p {
+  color: var(--mute);
+  margin: 0 0 16px;
+}
+.err {
+  color: var(--bad);
+  font-size: 13px;
+  min-height: 18px;
+  margin: 6px 0;
+}
+.free {
+  color: var(--ok);
+  font-size: 13px;
+}
+.toast {
+  position: fixed;
+  bottom: 84px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1d2623;
+  color: #fff;
+  padding: 9px 16px;
+  border-radius: 99px;
+  z-index: 99999 !important;
+  font-size: 14px;
+}
