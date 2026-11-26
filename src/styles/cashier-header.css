@@ -16,29 +16,48 @@
   display: flex;
   align-items: center;
   gap: var(--s4);
-  min-height: 64px;
+  min-height: 80px;
   padding: var(--s2) var(--s4);
   background: var(--chrome);
   color: var(--on-dark);
 }
+/* Brand sheet: logos at least 120px wide, never recoloured or stretched. */
 .cx header::before {
   content: "";
   flex: none;
-  width: 52px;
-  height: 44px;
+  width: 120px;
+  height: 64px;
   background: url("/assets/images/lynns-events-white.png") center / contain no-repeat;
 }
 .cx[data-brand="bean"] header::before {
-  width: 76px;
   background-image: url("/assets/images/lynns-bean-white.png");
 }
+/* Bites is round artwork: shown in a circle on a light rounded panel in small headers. */
 .cx[data-brand="bites"] header::before {
-  width: 44px;
+  width: 64px;
+  border-radius: var(--r);
+  background: #fbf3e3 url("/assets/images/lynns-bites.png") center / 56px no-repeat;
+}
+/* Cocktail keeps its own dark sign panel. */
+.cx[data-brand="cocktail"] header::before {
+  background-image: url("/assets/images/lynns-cocktail.png");
+}
+.cx .cxempty::before {
+  content: "";
+  display: block;
+  width: 140px;
+  height: 96px;
+  margin: 0 auto var(--s3);
+  background: url("/assets/images/lynns-events.png") center / contain no-repeat;
+}
+.cx[data-brand="bean"] .cxempty::before {
+  background-image: url("/assets/images/lynns-bean.png");
+}
+.cx[data-brand="bites"] .cxempty::before {
   background-image: url("/assets/images/lynns-bites.png");
 }
-.cx[data-brand="cocktail"] header::before {
-  width: 82px;
-  background-image: url("/assets/images/lynns-cocktail-onDark.png");
+.cx[data-brand="cocktail"] .cxempty::before {
+  background-image: url("/assets/images/lynns-cocktail.png");
 }
 .cx header b {
   display: block;

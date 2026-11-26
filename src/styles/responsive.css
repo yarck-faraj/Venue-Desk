@@ -40,11 +40,25 @@
     padding: var(--s2) var(--s3);
   }
   .cx header::before {
-    height: 36px;
+    height: 52px;
+  }
+  .cx[data-brand="bites"] header::before {
+    width: 52px;
+    background-size: 46px;
+  }
+  .cxtot {
+    margin-left: auto;
   }
   .cx header > div:first-of-type {
-    flex: 1;
+    order: 4;
+    flex: 1 0 100%;
     min-width: 0;
+    display: flex;
+    align-items: baseline;
+    gap: var(--s2);
+  }
+  .cx .cxempty::before {
+    height: 56px;
   }
   .cx header nav {
     order: 5;
