@@ -1,0 +1,109 @@
+/* Cashier till shell and branded header. */
+.cx {
+  --on-accent: #fff;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--ink);
+}
+.cx[data-brand="cocktail"] {
+  --on-accent: #2a1520;
+}
+.cx header {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+  min-height: 64px;
+  padding: var(--s2) var(--s4);
+  background: var(--chrome);
+  color: var(--on-dark);
+}
+.cx header::before {
+  content: "";
+  flex: none;
+  width: 52px;
+  height: 44px;
+  background: url("/assets/images/lynns-events-white.png") center / contain no-repeat;
+}
+.cx[data-brand="bean"] header::before {
+  width: 76px;
+  background-image: url("/assets/images/lynns-bean-white.png");
+}
+.cx[data-brand="bites"] header::before {
+  width: 44px;
+  background-image: url("/assets/images/lynns-bites.png");
+}
+.cx[data-brand="cocktail"] header::before {
+  width: 82px;
+  background-image: url("/assets/images/lynns-cocktail-onDark.png");
+}
+.cx header b {
+  display: block;
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.cx header small {
+  color: var(--on-dark-mute);
+  font-size: var(--fs-xs);
+}
+.cx header nav {
+  display: flex;
+  gap: var(--s1);
+  margin: 0 auto;
+  padding: var(--s1);
+  border-radius: var(--r);
+  background: rgba(255, 255, 255, 0.06);
+}
+.cx header nav button {
+  min-height: var(--tap);
+  background: transparent;
+  border: 0;
+  color: var(--on-dark-mute);
+  padding: 0 var(--s5);
+  border-radius: var(--r-sm);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.cx header nav button:hover {
+  color: var(--on-dark);
+}
+.cx header nav button.on {
+  background: var(--on-chrome);
+  color: var(--chrome);
+}
+.cx header :focus-visible {
+  outline-color: var(--focus-on-dark);
+}
+@media (max-width: 1000px) {
+  .cx header nav button {
+    padding: 0 var(--s3);
+  }
+}
+.cxtot {
+  text-align: right;
+  font-weight: 700;
+  font-size: var(--fs-xl);
+  line-height: 1.1;
+}
+.cxtot small {
+  display: block;
+  font-weight: 500;
+  color: var(--on-dark-mute);
+  font-size: var(--fs-xs);
+}
+.cxout {
+  flex: none;
+  white-space: nowrap;
+  min-height: var(--tap);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--on-dark);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--r-sm);
+  padding: 0 var(--s4);
+  font-weight: 600;
+}

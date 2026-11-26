@@ -5,14 +5,77 @@
   .cxcart {
     width: auto;
     max-width: none;
-    max-height: 45%;
+    max-height: 52%;
     border-left: 0;
-    border-top: 1px solid #eadfce;
+    border-top: 1px solid var(--line-strong);
+    border-radius: var(--r-lg) var(--r-lg) 0 0;
+    box-shadow: 0 -8px 24px rgba(38, 38, 26, 0.08);
+    padding-bottom: calc(var(--s3) + env(safe-area-inset-bottom));
+  }
+  .cxleft {
+    flex: 1 1 0;
+    min-height: 0;
+    padding: var(--s3);
+  }
+  .cxgrid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--s2);
+  }
+  .cxprod {
+    min-height: 100px;
+    padding: var(--s3);
+  }
+  .cxtotal {
+    padding: var(--s2) var(--s4);
+  }
+  .cxtotal b {
+    font-size: var(--fs-3xl);
+  }
+  .cxpay button {
+    min-height: 56px;
+  }
+  .cx header {
+    flex-wrap: wrap;
+    gap: var(--s2) var(--s3);
+    padding: var(--s2) var(--s3);
+  }
+  .cx header::before {
+    height: 36px;
+  }
+  .cx header > div:first-of-type {
+    flex: 1;
+    min-width: 0;
+  }
+  .cx header nav {
+    order: 5;
+    flex: 1 0 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .cx header nav button {
+    flex: 1 0 auto;
+    padding: 0 var(--s3);
+  }
+}
+@media (max-width: 380px) {
+  .cxgrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cxprod b {
+    padding-right: 0;
+  }
+  .cxprod em {
+    position: static;
+    align-self: flex-start;
+    order: -1;
+  }
+  .cxscanbtn {
+    padding: 0 var(--s3);
   }
 }
 .mgrid {
   display: grid;
-  gap: 14px;
+  gap: var(--s4);
 }
 @media (min-width: 1000px) {
   .mgrid {

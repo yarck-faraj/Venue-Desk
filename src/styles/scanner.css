@@ -2,31 +2,35 @@
   position: fixed;
   inset: 0;
   z-index: 50;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(20, 20, 12, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px;
+  padding: var(--s3);
 }
 .scanbox {
-  background: #fff;
-  border-radius: 18px;
+  background: var(--bg);
+  color: var(--ink);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-3);
   width: min(520px, 100%);
-  padding: 14px;
+  padding: var(--s4);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--s3);
 }
 .scanbox h3 {
   margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: var(--fs-xl);
+  font-weight: 700;
 }
 .scanview {
   position: relative;
   background: #000;
-  border-radius: 12px;
+  border-radius: var(--r);
   overflow: hidden;
   aspect-ratio: 4/3;
 }
@@ -42,15 +46,15 @@
   right: 10%;
   top: 50%;
   height: 2px;
-  background: #e5484d;
-  box-shadow: 0 0 8px #e5484d;
+  background: #ff4d3a;
+  box-shadow: 0 0 10px #ff4d3a;
 }
 #scanmsg {
-  min-height: 44px;
+  min-height: var(--tap);
   font-size: 16px;
   font-weight: 600;
-  color: #3b2417;
+  color: var(--ink);
 }
 #scanmsg.bad {
-  color: #b3261e;
+  color: var(--bad);
 }

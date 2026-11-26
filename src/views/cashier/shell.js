@@ -11,6 +11,13 @@ import { cashierToday } from "./today.js";
 import { cxOld } from "./old-sales.js";
 import { cxSell } from "./sell.js";
 
+function outletBrand(name) {
+  if (/bean|caf/i.test(name)) return "bean";
+  if (/bite/i.test(name)) return "bites";
+  if (/cocktail|bar/i.test(name)) return "cocktail";
+  return "events";
+}
+
 export function renderCashier() {
   refreshWatchDay();
   const o = /** @type {Partial<import("../../state/models.js").NamedRow>} */ (
@@ -42,7 +49,7 @@ export function renderCashier() {
   else if (mode === "old") body = cxOld();
   else body = cxSell(open, sh);
   $("#view").innerHTML =
-    `<div class="cx"><header><div><b>${esc(o.name || "Lynn's")}</b><small>${esc(nm)}</small></div><nav>${nav}</nav><div class="cxtot">${money(tot)}<small>today</small></div><button class="cxout" data-a="signout">Sign out</button></header>${body}</div>`;
+    `<div class="cx" data-brand="${outletBrand(o.name || "")}"><header><div><b>${esc(o.name || "Lynn's")}</b><small>${esc(nm)}</small></div><nav>${nav}</nav><div class="cxtot">${money(tot)}<small>today</small></div><button class="cxout" data-a="signout">Sign out</button></header>${body}</div>`;
   if (keep !== null) {
     const e = $("#pq");
     if (e) {

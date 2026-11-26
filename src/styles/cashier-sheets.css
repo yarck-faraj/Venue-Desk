@@ -1,0 +1,167 @@
+/* Cashier secondary screens: start/close gates, Today, Receipts, Old sales, size picker. */
+.cxbtn {
+  min-height: 56px;
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 0;
+  border-radius: var(--r);
+  padding: 0 var(--s8);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  box-shadow: var(--sh-1);
+}
+.cxgate,
+.cxday,
+.cxlist {
+  flex: 1;
+  overflow: auto;
+  padding: var(--s6) var(--s4);
+}
+.cxgate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--s3);
+}
+.cxgate h2 {
+  margin: 0;
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.cxgate p {
+  margin: 0 0 var(--s3);
+  color: var(--mute);
+  font-size: var(--fs-lg);
+}
+.cxcard {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-1);
+  padding: var(--s5);
+  margin: 0 auto var(--s4);
+  max-width: 560px;
+}
+.cxbig {
+  font-size: var(--fs-4xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.cxlist {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+}
+.cxrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s3);
+  min-height: 52px;
+  padding: var(--s3) var(--s1);
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+}
+.cxlist > .cxrow {
+  min-height: 64px;
+  padding: var(--s3) var(--s4);
+  margin-bottom: var(--s2);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--card);
+  box-shadow: var(--sh-1);
+}
+.cxlist > .cxrow span {
+  flex: 1;
+  color: var(--mute);
+}
+.cxlist > .cxrow b:last-child {
+  font-size: var(--fs-lg);
+}
+.cxrow.tap {
+  cursor: pointer;
+  transition:
+    border-color var(--t),
+    box-shadow var(--t);
+}
+.cxrow.tap:hover {
+  border-color: var(--line-strong);
+}
+.cxrow.tap:active {
+  box-shadow: var(--press);
+}
+.cxempty {
+  color: var(--mute);
+  text-align: center;
+  padding: var(--s8) var(--s4);
+}
+.cxlink {
+  min-height: 40px;
+  padding: 0 var(--s3);
+  border: 0;
+  border-radius: var(--r-sm);
+  background: none;
+  color: var(--bad);
+  font-weight: 600;
+}
+.cxlink:hover {
+  background: var(--bad-bg);
+}
+.cxcard .cxlink {
+  min-width: var(--tap);
+  min-height: var(--tap);
+  background: var(--sunken);
+}
+.cxcard .cxchips button {
+  min-height: 44px;
+}
+.cxsheet {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 12, 0.55);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 30;
+}
+.cxbox {
+  background: var(--bg);
+  width: min(520px, 100%);
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  box-shadow: var(--sh-3);
+  padding: var(--s5) var(--s5) calc(var(--s5) + env(safe-area-inset-bottom));
+}
+.cxbox h3 {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+}
+.cxsize {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 64px;
+  padding: 0 var(--s5);
+  margin-top: var(--s2);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--card);
+  color: var(--ink);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+.cxsize small {
+  color: var(--mute);
+  font-weight: 400;
+}
+.cxsize b {
+  color: var(--primary);
+  font-size: var(--fs-xl);
+}
+.cxsize:active {
+  border-color: var(--primary);
+}
