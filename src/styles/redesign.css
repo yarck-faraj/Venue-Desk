@@ -86,6 +86,43 @@ header.top .dot { margin-left: 0; }
   .cal { gap: 4px; padding: 4px; }
   .cal .d { min-height: 68px; padding: var(--s2); }
 }
+html[data-theme="dark"] body,
+html[data-theme="dark"] #app,
+html[data-theme="dark"] main {
+  background: #101916;
+  color: #f4efe6;
+}
+html[data-theme="dark"] #app .card,
+html[data-theme="dark"] #app .kpi,
+html[data-theme="dark"] #app .rm,
+html[data-theme="dark"] #app .tlwrap,
+html[data-theme="dark"] #app .tl .th,
+html[data-theme="dark"] #app .tl .tr,
+html[data-theme="dark"] #app .cal .d,
+html[data-theme="dark"] #app .kc {
+  background: #202925;
+  border-color: #3b4942;
+  color: #f4efe6;
+}
+html[data-theme="dark"] #app .rm-occupied { background: #193c2a; }
+html[data-theme="dark"] #app .rm-dirty { background: #463718; }
+html[data-theme="dark"] #app .rm-maintenance { background: #30383b; }
+html[data-theme="dark"] #app .kc.late { background: #48241f; }
+html[data-theme="dark"] #app .tl .tc { border-color: #3b4942; }
+html[data-theme="dark"] #app .tl .st-checkedout { background: #59645f; }
+html[data-theme="dark"] #app .t,
+html[data-theme="dark"] #app .card h2,
+html[data-theme="dark"] #app .card h3,
+html[data-theme="dark"] #app label,
+html[data-theme="dark"] #app .kc .kh {
+  color: #f4efe6;
+}
+html[data-theme="dark"] #app .s,
+html[data-theme="dark"] #app .row .s,
+html[data-theme="dark"] #app .rm span,
+html[data-theme="dark"] #app .rm em {
+  color: #b5c0b9;
+}
 @media (prefers-reduced-motion: no-preference) {
   .card, .kpi, .cxprod, .rm { animation: surface-in 220ms ease-out both; }
   @keyframes surface-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
