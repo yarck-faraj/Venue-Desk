@@ -111,6 +111,11 @@ html[data-theme="dark"] [data-brand="cocktail"] {
   outline: 2px solid var(--focus-on-dark);
   outline-offset: 2px;
 }
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder { color: #aebbb3; }
+html[data-theme="dark"] input:user-invalid,
+html[data-theme="dark"] select:user-invalid,
+html[data-theme="dark"] textarea:user-invalid { background-color: #2b211f; }
 @media (max-width: 640px) {
   .theme-toggle span { display: none; }
   .theme-toggle { padding-right: 7px; }
