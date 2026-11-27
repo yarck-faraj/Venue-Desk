@@ -3,6 +3,7 @@ import { byId, money } from "../../state/selectors.js";
 import { myEmail, myOutlet, staff } from "../../state/session.js";
 import { S, ui } from "../../state/store.js";
 import { today } from "../../domain/dates.js";
+import { myShift } from "../../state/shift.js";
 import { num } from "../../domain/money.js";
 import { $, esc } from "../../utils/dom.js";
 import { filterButtons } from "../../components/seg.js";
@@ -25,7 +26,7 @@ export function renderCashier() {
     ),
     nm = (staff.names || {})[myEmail()] || myEmail(),
     mode = ui.cx || "sell";
-  const sh = S.shifts.find((s) => s.date === today()),
+  const sh = S.shifts.find((s) => s.date === today() && s.staff === myEmail()),
     open = !!sh && !sh.closedAt,
     paid = S.sales.filter((s) => s.date === today() && s.status === "paid"),
     tot = paid.reduce((a, s) => a + num(s.total), 0);
