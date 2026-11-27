@@ -3,6 +3,13 @@ html {
 }
 html[data-theme="dark"] {
   color-scheme: dark;
+  --bg: #101916;
+  --ink: #f4efe6;
+  --primary: #d9c96a;
+  --primary-tint: #3d3c25;
+  --accent: #ff805e;
+  --chrome: #17332e;
+  --on-chrome: #f2cc72;
   --card: #202925;
   --sunken: #29352f;
   --mute: #b5c0b9;
@@ -129,6 +136,45 @@ html[data-theme="dark"] textarea::placeholder { color: #aebbb3; }
 html[data-theme="dark"] input:user-invalid,
 html[data-theme="dark"] select:user-invalid,
 html[data-theme="dark"] textarea:user-invalid { background-color: #2b211f; }
+html[data-theme="dark"] #modal .overlay {
+  background: rgba(6, 12, 10, .78);
+}
+html[data-theme="dark"] #modal .sheet,
+html[data-theme="dark"] #sheet .sheet {
+  background: #202925;
+  color: #f4efe6;
+  border-color: #46564d;
+}
+html[data-theme="dark"] #modal .sheet h3,
+html[data-theme="dark"] #sheet .sheet h3,
+html[data-theme="dark"] #modal label,
+html[data-theme="dark"] #sheet label,
+html[data-theme="dark"] #modal label > span,
+html[data-theme="dark"] #sheet label > span {
+  color: #f4efe6;
+}
+html[data-theme="dark"] #modal input,
+html[data-theme="dark"] #modal select,
+html[data-theme="dark"] #modal textarea,
+html[data-theme="dark"] #sheet input,
+html[data-theme="dark"] #sheet select,
+html[data-theme="dark"] #sheet textarea {
+  background: #29352f;
+  color: #f4efe6;
+  border-color: #53635a;
+}
+html[data-theme="dark"] #modal .x,
+html[data-theme="dark"] #sheet .x {
+  background: #29352f;
+  color: #f4efe6;
+  border-color: #53635a;
+}
+html[data-theme="dark"] #modal .btn.alt,
+html[data-theme="dark"] #sheet .btn.alt {
+  background: #29352f;
+  color: #f4efe6;
+  border-color: #53635a;
+}
 @media (max-width: 640px) {
   .theme-toggle {
     width: 40px;

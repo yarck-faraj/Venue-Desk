@@ -25,7 +25,7 @@ export function vCal() {
       .slice(0, 2)
       .map(
         (b) =>
-          `<i style="background:${spaceColor((b.spaceIds || [])[0])}${b.status === "hold" ? ";opacity:.55" : ""}">${esc(b.title)}</i>`,
+          `<i class="event-chip event-${esc(b.status)}" style="--event-color:${spaceColor((b.spaceIds || [])[0])}" title="${esc(b.title)}">${esc(b.title)}</i>`,
       )
       .join("")}${ev.length > 2 ? `<i style="background:#999">+${ev.length - 2} more</i>` : ""}</div>`;
   }
