@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VenueDesk — Pick a direction</title>
+<style>
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f6f2ea;color:#222;margin:0;padding:60px 24px}
+.wrap{max-width:900px;margin:0 auto}
+h1{font-weight:400;font-size:34px}
+p.lead{color:#666;max-width:44em;line-height:1.6}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+a.card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid #ddd;border-radius:14px;overflow:hidden;transition:transform .15s,box-shadow .15s}
+a.card:hover{transform:translateY(-4px);box-shadow:0 16px 32px -18px rgba(0,0,0,.35)}
+.sw{height:110px;display:flex}
+.sw i{flex:1}
+a.card .tx{padding:18px 20px 22px}
+.t{font-size:18px;font-weight:600}
+.d{color:#777;font-size:13.5px;margin-top:6px;line-height:1.5}
+.pill{display:inline-block;margin-top:12px;font:600 11px/1 sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#1f3a34;border:1px solid #ccc;padding:7px 12px;border-radius:999px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Three directions — open each, then choose.</h1>
+  <p class="lead">Each preview shows the sign-in screen and the owner dashboard in that style. Pick the one you love and I'll rebuild every screen of the app in it — bookings, calendar, rooms, reports, cashier till, all of it.</p>
+  <div class="cards">
+    <a class="card" href="style-a.html">
+      <div class="sw"><i style="background:#1f3a34"></i><i style="background:#f6f2ea"></i><i style="background:#c99a3c"></i></div>
+      <div class="tx"><div class="t">A · Bold Editorial</div><div class="d">Newspaper confidence: serif headlines, a striped money ledger, gold on deep green. Feels established and serious.</div><span class="pill">Open preview</span></div>
+    </a>
+    <a class="card" href="style-b.html">
+      <div class="sw"><i style="background:#41604f"></i><i style="background:#f4ede2"></i><i style="background:#b7924f"></i></div>
+      <div class="tx"><div class="t">B · Soft Luxury</div><div class="d">Boutique-hotel warmth: rounded cards, sage green, cream and terracotta. Calm, friendly, premium.</div><span class="pill">Open preview</span></div>
+    </a>
+    <a class="card" href="style-c.html">
+      <div class="sw"><i style="background:#0c1211"></i><i style="background:#1d2c28"></i><i style="background:#3ddc97"></i></div>
+      <div class="tx"><div class="t">C · Dark Control Room</div><div class="d">Operations console: near-black glass, mint data, tabular numbers, live status pulses. Sharp and modern.</div><span class="pill">Open preview</span></div>
+    </a>
+  </div>
+</div>
+</body>
+</html>

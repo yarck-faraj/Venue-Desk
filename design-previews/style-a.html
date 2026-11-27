@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VenueDesk — Style A: Bold Editorial</title>
+<style>
+:root{
+  --ink:#141210;--paper:#f6f2ea;--paper2:#efe8db;--cream:#faf7f1;
+  --brand:#1f3a34;--brand2:#2a4a42;--gold:#c99a3c;--gold2:#e3b34a;
+  --good:#2e7d4f;--bad:#b3402e;--line:#d8cfbf;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.5}
+.sans{font-family:Helvetica,Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.badge{font:600 11px/1 Helvetica,Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+
+/* ---------- shared ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;
+  font:600 14px/1 Helvetica,Arial,sans-serif;letter-spacing:.04em;padding:16px 28px;border-radius:2px;
+  background:var(--ink);color:var(--cream);transition:transform .15s,background .15s}
+.btn:hover{background:#000;transform:translateY(-1px)}
+.btn.gold{background:var(--gold);color:#241a06}
+.btn.gold:hover{background:var(--gold2)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--cream)}
+
+/* ---------- sign in ---------- */
+.auth{display:grid;grid-template-columns:1.1fr 1fr;min-height:100vh}
+.auth-brand{background:var(--brand);color:#f2e9d2;display:flex;flex-direction:column;justify-content:space-between;
+  padding:56px 60px;position:relative;overflow:hidden}
+.auth-brand::after{content:"";position:absolute;right:-140px;bottom:-140px;width:420px;height:420px;border-radius:50%;
+  border:1px solid rgba(227,179,74,.35)}
+.auth-brand::before{content:"";position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;border-radius:50%;
+  border:1px solid rgba(227,179,74,.25)}
+.auth-brand .badge{color:var(--gold2)}
+.auth-brand h1{font-size:clamp(40px,5vw,64px);line-height:1.05;font-weight:400;margin:18px 0 0;max-width:9em}
+.auth-brand h1 em{font-style:italic;color:var(--gold2)}
+.auth-brand p{margin-top:22px;max-width:34em;color:#d8cfb8;font-size:15px}
+.auth-brand .foot{font:500 12px/1.8 Helvetica,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#9fb3a9}
+.auth-panel{display:flex;align-items:center;justify-content:center;background:var(--cream);padding:56px 48px}
+.auth-card{width:min(100%,400px)}
+.auth-card h2{font-size:32px;font-weight:400;margin:10px 0 6px}
+.auth-card .sub{color:#6f675a;font-size:14px;margin-bottom:34px}
+.field{margin-bottom:20px}
+.field label{display:block;font:600 11px/1 Helvetica,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#6f675a;margin-bottom:9px}
+.field input{width:100%;border:0;border-bottom:1.5px solid var(--ink);background:transparent;padding:11px 2px;
+  font:400 17px/1 Georgia,serif;color:var(--ink);border-radius:0;outline:none;transition:border-color .15s}
+.field input:focus{border-bottom-color:var(--gold)}
+.auth-row{display:flex;justify-content:space-between;align-items:center;margin:6px 0 28px;font:500 13px/1 Helvetica,Arial,sans-serif}
+.auth-row a{color:var(--brand);text-decoration:none;border-bottom:1px solid var(--line)}
+.auth-card .btn{width:100%}
+
+/* ---------- dashboard ---------- */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:36px;height:72px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo b{font-size:21px;font-weight:400;letter-spacing:.02em}
+.logo span{color:var(--gold)}
+nav.main{display:flex;gap:4px;margin-left:12px}
+nav.main a{font:600 12px/1 Helvetica,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#6f675a;
+  text-decoration:none;padding:10px 14px;border-radius:2px;transition:color .15s}
+nav.main a:hover{color:var(--ink)}
+nav.main a.on{color:var(--ink);box-shadow:inset 0 -2px 0 var(--gold)}
+.top .sp{flex:1}
+.av{width:38px;height:38px;border-radius:50%;background:var(--brand);color:var(--gold2);
+  display:grid;place-items:center;font:600 13px/1 Helvetica,Arial,sans-serif}
+
+.hero{padding:44px 0 8px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.hero h1{font-size:clamp(34px,4vw,52px);font-weight:400;line-height:1.05}
+.hero h1 em{font-style:italic;color:var(--brand)}
+.hero p{color:#6f675a;margin-top:8px}
+.ledger{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--ink);border-radius:2px;background:var(--cream);margin:30px 0 8px}
+.ledger>div{padding:26px 26px 22px;border-right:1px solid var(--line)}
+.ledger>div:last-child{border-right:0}
+.ledger .k{font:600 11px/1 Helvetica,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#6f675a}
+.ledger .v{font-size:clamp(26px,2.6vw,38px);margin-top:14px;letter-spacing:-.01em}
+.ledger .v small{font:600 13px/1 Helvetica,Arial,sans-serif;color:var(--good);margin-left:8px;letter-spacing:0}
+.ledger .d{margin-top:10px;font:500 12px/1.5 Helvetica,Arial,sans-serif;color:#8a8172}
+.ledger>div.hl{background:var(--brand);color:#f2e9d2}
+.ledger>div.hl .k{color:#9fb3a9}
+.ledger>div.hl .v{color:var(--gold2)}
+.ledger>div.hl .d{color:#b9c6bd}
+
+.grid{display:grid;grid-template-columns:1.6fr 1fr;gap:28px;margin:30px 0 60px}
+.panel{background:var(--cream);border:1px solid var(--line);border-radius:2px;padding:26px}
+.panel h3{font-size:19px;font-weight:400;display:flex;justify-content:space-between;align-items:baseline}
+.panel h3 span{font:600 11px/1 Helvetica,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.rows{margin-top:14px}
+.row{display:flex;align-items:center;gap:14px;padding:14px 2px;border-top:1px solid var(--line)}
+.row .b{flex:1}
+.row .b b{font-weight:400;font-size:16px}
+.row .b small{display:block;color:#8a8172;font:500 12px/1.6 Helvetica,Arial,sans-serif}
+.row .amt{font-size:17px;letter-spacing:.01em}
+.tag{font:600 10px/1 Helvetica,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:2px}
+.tag.ok{background:#e4efe4;color:var(--good)}
+.tag.hold{background:#f4ecd8;color:#8a6a1f}
+.tag.bad{background:#f6e2dd;color:var(--bad)}
+.chart{display:flex;align-items:flex-end;gap:10px;height:170px;margin-top:20px}
+.chart i{flex:1;background:linear-gradient(180deg,var(--brand2),var(--brand));border-radius:2px 2px 0 0;opacity:.92}
+.chart i.g{background:linear-gradient(180deg,var(--gold2),var(--gold))}
+.chart .lb{display:flex;gap:10px;margin-top:10px}
+.chart .lb span{flex:1;text-align:center;font:600 10px/1 Helvetica,Arial,sans-serif;letter-spacing:.1em;color:#8a8172;text-transform:uppercase}
+.today{margin-top:6px}
+.today .row{border-top-style:dashed}
+.today .t{font:600 12px/1 Helvetica,Arial,sans-serif;letter-spacing:.06em;color:#6f675a;min-width:64px}
+footer.foot{border-top:1px solid var(--line);padding:22px 0 40px;color:#8a8172;
+  font:500 12px/1.6 Helvetica,Arial,sans-serif;letter-spacing:.06em}
+</style>
+</head>
+<body>
+
+<section class="auth">
+  <div class="auth-brand">
+    <div>
+      <div class="badge">Lynn's Event Center · Dawhenya</div>
+      <h1>The house, <em>in order.</em></h1>
+      <p>Every hall, till and guest room in one quiet ledger — bookings, sales and balances, kept precisely.</p>
+    </div>
+    <div class="foot">Est. Dawhenya · GH₵ · v4</div>
+  </div>
+  <div class="auth-panel">
+    <div class="auth-card">
+      <div class="badge">Sign in</div>
+      <h2>Welcome back</h2>
+      <p class="sub">Use your Lynn's email or till name.</p>
+      <div class="field"><label>Email or name</label><input placeholder="you@lynn's"></div>
+      <div class="field"><label>Password</label><input type="password" placeholder="••••••••"></div>
+      <div class="auth-row"><a href="#">Forgot password?</a></div>
+      <button class="btn gold">Sign in</button>
+    </div>
+  </div>
+</section>
+
+<div class="top">
+  <div class="wrap">
+    <div class="logo"><b>Lynn's</b><span>·</span><span class="sans" style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#6f675a">VenueDesk</span></div>
+    <nav class="main">
+      <a class="on" href="#">Home</a><a href="#">Bookings</a><a href="#">Calendar</a><a href="#">Rooms</a><a href="#">Money</a><a href="#">Reports</a>
+    </nav>
+    <div class="sp"></div>
+    <div class="av">LN</div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <div class="badge">Thursday · 27 Nov 2026</div>
+      <h1>Good morning, <em>Lynn.</em></h1>
+      <p>Two arrivals today, one hall booking, and the Bean till is mid-shift.</p>
+    </div>
+    <div style="display:flex;gap:10px">
+      <button class="btn ghost">View reports</button>
+      <button class="btn">New booking</button>
+    </div>
+  </div>
+
+  <div class="ledger">
+    <div class="hl">
+      <div class="k">Collected today</div>
+      <div class="v">GH₵ 4,820</div>
+      <div class="d">across all three tills</div>
+    </div>
+    <div>
+      <div class="k">This month</div>
+      <div class="v">GH₵ 86,400<small>+12%</small></div>
+      <div class="d">vs. October</div>
+    </div>
+    <div>
+      <div class="k">Outstanding</div>
+      <div class="v">GH₵ 12,150</div>
+      <div class="d">5 bookings with balance</div>
+    </div>
+    <div>
+      <div class="k">Occupancy</div>
+      <div class="v">7 / 10</div>
+      <div class="d">3 rooms ready to let</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="panel">
+      <h3>Recent activity <span>Live</span></h3>
+      <div class="rows">
+        <div class="row"><div class="b"><b>Wedding — Akosua &amp; Kwame</b><small>Hall A · 40 guests · balance GH₵ 3,200</small></div><span class="tag hold">Deposit</span><div class="amt">GH₵ 6,500</div></div>
+        <div class="row"><div class="b"><b>Bean — morning shift</b><small>Cash counted, balanced</small></div><span class="tag ok">Closed</span><div class="amt">GH₵ 1,240</div></div>
+        <div class="row"><div class="b"><b>Cocktail — Round 14</b><small>Card · table 3</small></div><span class="tag ok">Paid</span><div class="amt">GH₵ 310</div></div>
+        <div class="row"><div class="b"><b>Conference — Ghana Bulk</b><small>Hall B · full day · unpaid</small></div><span class="tag bad">Due</span><div class="amt">GH₵ 9,000</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="panel">
+        <h3>This week's sales <span>GH₵</span></h3>
+        <div class="chart">
+          <i style="height:44%"></i><i style="height:62%"></i><i class="g" style="height:96%"></i>
+          <i style="height:55%"></i><i style="height:70%"></i><i style="height:38%"></i><i style="height:26%"></i>
+        </div>
+        <div class="lb"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+      </div>
+      <div class="panel today" style="margin-top:28px">
+        <h3>Today at the house</h3>
+        <div class="rows">
+          <div class="row"><div class="t">09:00</div><div class="b"><b>Check-out · Room 3</b></div><span class="tag ok">Done</span></div>
+          <div class="row"><div class="t">14:00</div><div class="b"><b>Check-in · Room 7</b><small>Akosua &amp; Kwame</small></div><span class="tag hold">2 PM</span></div>
+          <div class="row"><div class="t">18:00</div><div class="b"><b>Hall A — reception setup</b></div><span class="tag hold">Soon</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot wrap">Lynn's Event Center · Dawhenya · Powered by VenueDesk</footer>
+
+</body>
+</html>
