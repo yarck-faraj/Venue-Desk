@@ -86,7 +86,9 @@ service cloud.firestore {
     match /shifts/{doc} {
       allow read: if isOwner() || (isCashier() && resource.data.outletId == myOutlet());
       allow create: if isOwner() || (isCashier() && request.resource.data.staff == email() && request.resource.data.outletId == myOutlet());
-      allow update: if isOwner() || (isCashier() && resource.data.staff == email() && resource.data.outletId == myOutlet() && request.resource.data.outletId == myOutlet());
+      // a cashier may only close their own still-open shift, and only the close-out fields: a closed (counted) till can never be edited again
+      allow update: if isOwner() || (isCashier() && resource.data.staff == email() && resource.data.outletId == myOutlet() && resource.data.closedAt == 0
+        && onlyKeys(['closedAt', 'counted', 'expected', 'diff', 'note', 'totals', 'updatedAt', 'updatedBy']));
       allow delete: if isOwner();
     }
 

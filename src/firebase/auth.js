@@ -122,6 +122,12 @@ export function startAuth(scanClose) {
         },
         (e) => {
           console.error(e);
+          stopWatch();
+          showAuth("gate");
+          const g = $("#authGate");
+          g.innerHTML = `<p>Could not load staff access: ${esc(e.code || "error")}. Check this device's internet connection, then try again.</p>
+            <button class="btn" style="width:100%" onclick="location.reload()">Try again</button>
+            <p style="margin-top:12px"><button class="btn alt sm" data-a="signout">Sign out</button></p>`;
         },
       ),
     );
